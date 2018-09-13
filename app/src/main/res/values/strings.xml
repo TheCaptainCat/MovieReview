@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MovieReview</string>
+    <string name="movieName">Yor, le chasseur du futur</string>
+    <string name="like">Like</string>
+    <string name="comment">Comment</string>
+    <string name="send">Send</string>
+    <string name="share">Share</string>
+</resources>
