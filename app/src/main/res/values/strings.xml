@@ -1,8 +1,17 @@
 <resources>
     <string name="app_name">MovieReview</string>
-    <string name="movieName">Yor, le chasseur du futur</string>
     <string name="like">Like</string>
     <string name="comment">Comment</string>
     <string name="send">Send</string>
     <string name="share">Share</string>
+    <string name="title">Title</string>
+    <string name="title_yor">Yor the Hunter from the future</string>
+    <string name="original_title">Original title</string>
+    <string name="original_tile_yor">Il mondo di Yor</string>
+    <string name="description">Description</string>
+    <string name="description_yor">
+        "Yor, the Hunter From The Future (Italian: Il mondo di Yor, lit. 'The World Of Yor') is a 1983 science fiction fantasy film directed by Antonio Margheriti and starring Reb Brown, Corinne Cléry, Luciano Pigozzi, and John Steiner. The film was an Italian-French-Turkish co-production based on the Argentinian comic Yor the Hunter. Though the film was one of Margheriti's most financially successful films, it received poor reviews from Variety and The New York Times and drew three nominations at the 1983 Golden Raspberry Awards.
+    </string>
+    <string name="key_words">Key words</string>
+    <string name="key_words_yor">WORDS</string>
 </resources>
