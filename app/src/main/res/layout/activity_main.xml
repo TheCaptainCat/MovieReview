@@ -180,6 +180,8 @@
             </LinearLayout>
 
             <LinearLayout
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -188,19 +190,20 @@
                     android:id="@+id/editText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:hint="@string/comment_placeholder" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/sendBtn"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableLeft="@drawable/ic_call_made_black_24dp"
-                    android:drawableStart="@drawable/ic_call_made_black_24dp"
-                    android:text="@string/send" />
+                    android:background="@color/colorPrimary"
+                    android:tint="@color/colorAccent"
+                    app:srcCompat="@drawable/ic_chat_black_24dp" />
             </LinearLayout>
 
         </LinearLayout>

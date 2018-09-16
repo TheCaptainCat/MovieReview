@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MovieReview</string>
     <string name="like">Like</string>
+    <string name="liked">Liked!</string>
     <string name="comment">Comment</string>
     <string name="send">Send</string>
     <string name="share">Share</string>
@@ -14,4 +15,5 @@
     </string>
     <string name="key_words">Key words</string>
     <string name="key_words_yor">WORDS</string>
+    <string name="comment_placeholder">Say something...</string>
 </resources>
