@@ -4,6 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 
+import fr.polytech.lechat.moviereview.listeners.CommentClickListener;
+import fr.polytech.lechat.moviereview.listeners.CommentListener;
+import fr.polytech.lechat.moviereview.listeners.LikeListener;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

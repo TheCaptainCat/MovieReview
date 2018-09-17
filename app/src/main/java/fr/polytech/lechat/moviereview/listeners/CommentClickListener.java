@@ -1,4 +1,4 @@
-package fr.polytech.lechat.moviereview;
+package fr.polytech.lechat.moviereview.listeners;
 
 import android.view.View;
 import android.widget.EditText;

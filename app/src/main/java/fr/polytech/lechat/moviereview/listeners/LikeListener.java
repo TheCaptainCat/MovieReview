@@ -1,7 +1,9 @@
-package fr.polytech.lechat.moviereview;
+package fr.polytech.lechat.moviereview.listeners;
 
 import android.view.View;
 import android.widget.Button;
+
+import fr.polytech.lechat.moviereview.R;
 
 public class LikeListener implements View.OnClickListener {
 
