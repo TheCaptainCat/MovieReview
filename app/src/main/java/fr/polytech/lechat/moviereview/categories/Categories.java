@@ -20,8 +20,8 @@ public class Categories {
         categories.add(new Category("Jeunesse"));
         categories.add(new Category("Drame"));
         categories.add(new Category("Comédie"));
-        categories.add(new Category("F"));
-        categories.add(new Category("G"));
+        categories.add(new Category("Western"));
+        categories.add(new Category(""));
 
         return categories;
     }
