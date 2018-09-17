@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">MovieReview</string>
+    <string name="page_title">Page Title</string>
+    <string name="back_title">Back title</string>
     <string name="like">Like</string>
     <string name="liked">Liked!</string>
     <string name="comment">Comment</string>
@@ -15,5 +17,6 @@
     </string>
     <string name="key_words">Key words</string>
     <string name="key_words_yor">WORDS</string>
-    <string name="comment_placeholder">Say something...</string>
+    <string name="comment_placeholder">Say something…</string>
+    <string name="title_activity_categories">Categories</string>
 </resources>

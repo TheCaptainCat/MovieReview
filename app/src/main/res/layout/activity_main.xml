@@ -19,8 +19,8 @@
             <fr.polytech.lechat.moviereview.NavView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:page_title="Page Title"
-                app:back_title="Back title">
+                app:page_title="@string/page_title"
+                app:back_title="@string/back_title">
 
             </fr.polytech.lechat.moviereview.NavView>
 
