@@ -9,7 +9,7 @@ import android.widget.TextView;
 import fr.polytech.lechat.moviereview.R;
 
 public class CategoryViewHolder extends RecyclerView.ViewHolder {
-    TextView name;
+    private TextView name;
 
     public CategoryViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -19,6 +19,5 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder {
 
     public void setLayout(Category category) {
         name.setText(category.getName());
-        Log.i("", "LOL");
     }
 }

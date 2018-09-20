@@ -19,7 +19,7 @@ public class CategoriesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_categories);
 
         RecyclerView recyclerView = findViewById(R.id.categories_recycler);
-        recyclerView.setAdapter(new CategoryAdapter());
+        recyclerView.setAdapter(new CategoryAdapter(this));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
