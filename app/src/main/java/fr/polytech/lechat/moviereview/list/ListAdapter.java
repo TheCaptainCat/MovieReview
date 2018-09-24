@@ -1,6 +1,5 @@
 package fr.polytech.lechat.moviereview.list;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,7 +11,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import fr.polytech.lechat.moviereview.MovieActivity;
 import fr.polytech.lechat.moviereview.MovieManager;
 import fr.polytech.lechat.moviereview.R;
 
@@ -21,22 +19,20 @@ public class ListAdapter extends RecyclerView.Adapter {
     private static final int LETTER_ELEMENT = 1;
     private static final int COUNT_ELEMENT = 2;
 
-    private List<ListElement> list;
+    private List<ListElement> elements;
     private MovieListActivity activity;
-    private OnClick onClick;
 
 
     public ListAdapter(MovieListActivity activity) {
         this.activity = activity;
-        this.list = ListAdapter.generateList();
-        this.onClick = new OnClick();
+        this.elements = ListAdapter.generateList();
     }
 
 
     @Override
     public int getItemViewType(int position) {
-        if (list != null) {
-            ListElement element = list.get(position);
+        if (elements != null) {
+            ListElement element = elements.get(position);
             switch (element.getType()) {
                 case movie:
                     return MOVIE_ELEMENT;
@@ -52,7 +48,7 @@ public class ListAdapter extends RecyclerView.Adapter {
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup,
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup,
                                                       int type) {
         View view;
         if (type == LETTER_ELEMENT) {
@@ -66,7 +62,6 @@ public class ListAdapter extends RecyclerView.Adapter {
         } else {
             view = LayoutInflater.from(viewGroup.getContext())
                     .inflate(R.layout.cell_list_movie, viewGroup, false);
-            view.setOnClickListener(onClick);
             return new MovieViewHolder(view);
         }
     }
@@ -75,9 +70,9 @@ public class ListAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder,
                                  int position) {
-        ListElement element = this.list.get(position);
+        ListElement element = this.elements.get(position);
         if (element != null && element.getType().equals(ListElementType.movie)) {
-            ((MovieViewHolder) viewHolder).setLayout((Movie) element);
+            ((MovieViewHolder) viewHolder).setLayout((Movie) element, activity, getMovieIdFromPosition(position));
         } else if (element != null && element.getType().equals(ListElementType.letter)) {
             ((LetterViewHolder) viewHolder).setLayout((Letter) element);
         } else if (element != null && element.getType().equals(ListElementType.count)) {
@@ -88,8 +83,14 @@ public class ListAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        if (list != null)
-            return list.size();
+        if (elements != null)
+            return elements.size();
+        return 0;
+    }
+
+    public int getMovieIdFromPosition(int position) {
+        if (elements.get(position) instanceof Movie)
+            return ((Movie) elements.get(position)).getId();
         return 0;
     }
 
@@ -128,14 +129,5 @@ public class ListAdapter extends RecyclerView.Adapter {
         }
 
         return elements;
-    }
-
-    private class OnClick implements View.OnClickListener{
-
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(activity, MovieActivity.class);
-            activity.startActivity(intent);
-        }
     }
 }

@@ -33,6 +33,13 @@ public class MovieManager {
         return new ArrayList<>(getInstance().movies);
     }
 
+    public static Movie getMovieById(int id) {
+        for (Movie movie : getInstance().movies)
+            if (movie.getId() == id)
+                return movie;
+        return null;
+    }
+
     private void initCategories() {
         categories.add(new Category("Action"));
         categories.add(new Category("Aventure"));
@@ -52,21 +59,21 @@ public class MovieManager {
     }
 
     private void initMovies() {
-        movies.add(new Movie("Yor, le chasseur du futur", "", R.mipmap.yor));
-        movies.add(new Movie("Turkish Star Wars", "", R.mipmap.turkishsw));
-        movies.add(new Movie("Star Crash", "", R.mipmap.starcrash));
-        movies.add(new Movie("Future Wars", "", R.mipmap.futurewars));
-        movies.add(new Movie("Hologram Man", "", R.mipmap.hologram_man));
-        movies.add(new Movie("Attack of the Super Monsters", "", R.mipmap.super_monsters));
-        movies.add(new Movie("Le Colosse de Hong Kong", "", R.mipmap.colosse_hong_kong));
-        movies.add(new Movie("Mad Mutilator", "", R.mipmap.mad_mutilator));
-        movies.add(new Movie("American Cyborg", "", R.mipmap.american_cyborg));
-        movies.add(new Movie("Robo Vampire", "", R.mipmap.robo_vampire));
-        movies.add(new Movie("Adam and Eve Versus the Cannibals", "", R.mipmap.adam_eve));
-        movies.add(new Movie("Dinosaur from the Deep", "", R.mipmap.dinosaur_deep));
-        movies.add(new Movie("Iron Master", "", R.mipmap.iron_master));
-        movies.add(new Movie("Mon Curé chez les Nudistes", "", R.mipmap.mon_cure));
-        movies.add(new Movie("L'ile aux Femmes Nues", "", R.mipmap.lile));
-        movies.add(new Movie("Infirmière de nuit", "", R.mipmap.infirmiere));
+        movies.add(new Movie(0 ,"Yor, le chasseur du futur", "", R.mipmap.yor));
+        movies.add(new Movie(1 ,"Turkish Star Wars", "", R.mipmap.turkishsw));
+        movies.add(new Movie(2 ,"Star Crash", "", R.mipmap.starcrash));
+        movies.add(new Movie(3 ,"Future Wars", "", R.mipmap.futurewars));
+        movies.add(new Movie(4 ,"Hologram Man", "", R.mipmap.hologram_man));
+        movies.add(new Movie(5 ,"Attack of the Super Monsters", "", R.mipmap.super_monsters));
+        movies.add(new Movie(6 ,"Le Colosse de Hong Kong", "", R.mipmap.colosse_hong_kong));
+        movies.add(new Movie(7 ,"Mad Mutilator", "", R.mipmap.mad_mutilator));
+        movies.add(new Movie(8 ,"American Cyborg", "", R.mipmap.american_cyborg));
+        movies.add(new Movie(9 ,"Robo Vampire", "", R.mipmap.robo_vampire));
+        movies.add(new Movie(10 ,"Adam and Eve Versus the Cannibals", "", R.mipmap.adam_eve));
+        movies.add(new Movie(11 ,"Dinosaur from the Deep", "", R.mipmap.dinosaur_deep));
+        movies.add(new Movie(12 ,"Iron Master", "", R.mipmap.iron_master));
+        movies.add(new Movie(13 ,"Mon Curé chez les Nudistes", "", R.mipmap.mon_cure));
+        movies.add(new Movie(14 ,"L'ile aux Femmes Nues", "", R.mipmap.lile));
+        movies.add(new Movie(15 ,"Infirmière de nuit", "", R.mipmap.infirmiere));
     }
 }
