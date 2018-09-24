@@ -8,9 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-import fr.polytech.lechat.moviereview.MainActivity;
+import fr.polytech.lechat.moviereview.MovieActivity;
+import fr.polytech.lechat.moviereview.MovieManager;
 import fr.polytech.lechat.moviereview.R;
 
 public class ListAdapter extends RecyclerView.Adapter {
@@ -91,53 +94,47 @@ public class ListAdapter extends RecyclerView.Adapter {
     }
 
     public static List<ListElement> generateList() {
-        List<ListElement> list = new ArrayList<>();
+        List<Movie> movies = MovieManager.getMovies();
 
-        list.add(new Letter("A"));
-        list.add(new Movie("aa", "Yor", "The Hunter from the future"));
-        list.add(new Movie("ab", "Yor", "The Hunter from the future"));
-        list.add(new Count(2));
+        Collections.sort(movies, new Comparator<Movie>() {
+            @Override
+            public int compare(Movie o1, Movie o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
 
-        list.add(new Letter("B"));
-        list.add(new Movie("ba", "Yor", "The Hunter from the future"));
-        list.add(new Movie("bb", "Yor", "The Hunter from the future"));
-        list.add(new Count(2));
+        List<ListElement> elements = new ArrayList<>();
 
-        list.add(new Letter("C"));
-        list.add(new Movie("ca", "Yor", "The Hunter from the future"));
-        list.add(new Count(1));
+        char last = '\0';
+        int count = 0;
+        for (Movie movie : movies) {
+            char current =  movie.getName().charAt(0);
 
-        list.add(new Letter("E"));
-        list.add(new Movie("ea", "Yor", "The Hunter from the future"));
-        list.add(new Movie("eb", "Yor", "The Hunter from the future"));
-        list.add(new Movie("ec", "Yor", "The Hunter from the future"));
-        list.add(new Count(3));
+            if (last == '\0' || last != current) {
+                if (count > 0) {
+                    elements.add(new Count(count));
+                    count = 0;
+                }
+                elements.add(new Letter(String.valueOf(current)));
+            }
 
-        list.add(new Letter("K"));
-        list.add(new Movie("ka", "Yor", "The Hunter from the future"));
-        list.add(new Movie("kb", "Yor", "The Hunter from the future"));
-        list.add(new Count(2));
+            elements.add(movie);
+            count++;
 
-        list.add(new Letter("Y"));
-        list.add(new Movie("ya", "Yor", "The Hunter from the future"));
-        list.add(new Movie("yb", "Yor", "The Hunter from the future"));
-        list.add(new Movie("yc", "Yor", "The Hunter from the future"));
-        list.add(new Movie("yd", "Yor", "The Hunter from the future"));
-        list.add(new Movie("ye", "Yor", "The Hunter from the future"));
-        list.add(new Count(5));
+            last = current;
+        }
+        if (count > 0) {
+            elements.add(new Count(count));
+        }
 
-        list.add(new Letter("Z"));
-        list.add(new Movie("z", "Yor", "The Hunter from the future"));
-        list.add(new Count(1));
-
-        return list;
+        return elements;
     }
 
     private class OnClick implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(activity, MainActivity.class);
+            Intent intent = new Intent(activity, MovieActivity.class);
             activity.startActivity(intent);
         }
     }

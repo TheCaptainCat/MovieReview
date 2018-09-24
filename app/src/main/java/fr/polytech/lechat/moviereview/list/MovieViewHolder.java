@@ -10,20 +10,17 @@ import fr.polytech.lechat.moviereview.R;
 
 public class MovieViewHolder extends RecyclerView.ViewHolder {
     private TextView name;
-    private TextView description;
     private ImageView image;
 
     public MovieViewHolder(@NonNull View itemView) {
         super(itemView);
 
         name = itemView.findViewById(R.id.movie_name);
-        description = itemView.findViewById(R.id.movie_desc);
         image = itemView.findViewById(R.id.movie_img);
     }
 
     public void setLayout(Movie movie) {
         name.setText(movie.getName());
-        description.setText(movie.getDescription());
         image.setImageResource(movie.getImgId());
     }
 }

@@ -9,12 +9,12 @@ import fr.polytech.lechat.moviereview.listeners.CommentClickListener;
 import fr.polytech.lechat.moviereview.listeners.CommentListener;
 import fr.polytech.lechat.moviereview.listeners.LikeListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MovieActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_movie);
 
         findViewById(R.id.likeBtn).setOnClickListener(new LikeListener());
         findViewById(R.id.commentBtn).setOnClickListener(

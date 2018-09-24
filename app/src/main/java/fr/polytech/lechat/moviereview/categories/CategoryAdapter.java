@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import fr.polytech.lechat.moviereview.MovieManager;
 import fr.polytech.lechat.moviereview.R;
 import fr.polytech.lechat.moviereview.list.MovieListActivity;
 
@@ -21,7 +22,7 @@ public class CategoryAdapter extends RecyclerView.Adapter {
 
     public CategoryAdapter(CategoriesActivity activity) {
         this.activity = activity;
-        this.categories = Categories.getCategories();
+        this.categories = MovieManager.getCategories();
         this.onClick = new OnClick();
     }
 

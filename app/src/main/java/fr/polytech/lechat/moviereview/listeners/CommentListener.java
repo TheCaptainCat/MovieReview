@@ -4,14 +4,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import fr.polytech.lechat.moviereview.MainActivity;
+import fr.polytech.lechat.moviereview.MovieActivity;
 
 public class CommentListener implements View.OnClickListener {
     private EditText commentText;
-    private MainActivity mainActivity;
+    private MovieActivity movieActivity;
 
-    public CommentListener(MainActivity mainActivity, EditText commentText) {
-        this.mainActivity = mainActivity;
+    public CommentListener(MovieActivity movieActivity, EditText commentText) {
+        this.movieActivity = movieActivity;
         this.commentText = commentText;
     }
 
@@ -19,7 +19,7 @@ public class CommentListener implements View.OnClickListener {
     public void onClick(View v) {
         if (commentText.getText().toString().equals(""))
             return;
-        Toast.makeText(mainActivity, commentText.getText(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(movieActivity, commentText.getText(), Toast.LENGTH_SHORT).show();
         commentText.setText("");
     }
 }
