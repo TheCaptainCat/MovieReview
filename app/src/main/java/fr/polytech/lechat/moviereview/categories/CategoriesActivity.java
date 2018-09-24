@@ -21,6 +21,13 @@ public class CategoriesActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.categories_recycler);
         recyclerView.setAdapter(new CategoryAdapter(this));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        findViewById(R.id.backBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 }

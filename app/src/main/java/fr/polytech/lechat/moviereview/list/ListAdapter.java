@@ -26,6 +26,7 @@ public class ListAdapter extends RecyclerView.Adapter {
     public ListAdapter(MovieListActivity activity) {
         this.activity = activity;
         this.list = ListAdapter.generateList();
+        this.onClick = new OnClick();
     }
 
 
