@@ -24,4 +24,5 @@ Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delata
     <string name="comment_placeholder">Say something…</string>
     <string name="title_activity_categories">Categories</string>
     <string name="movie_list_title">Movies</string>
+    <string name="list_categories">Categories</string>
 </resources>
