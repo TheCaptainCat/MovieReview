@@ -1,12 +1,16 @@
-package fr.polytech.lechat.moviereview;
+package fr.polytech.lechat.moviereview.movie;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import fr.polytech.lechat.moviereview.MovieManager;
+import fr.polytech.lechat.moviereview.R;
 import fr.polytech.lechat.moviereview.list.Movie;
 import fr.polytech.lechat.moviereview.listeners.CommentClickListener;
 import fr.polytech.lechat.moviereview.listeners.CommentListener;
@@ -41,6 +45,10 @@ public class MovieActivity extends AppCompatActivity {
         this.name.setText(movie.getName());
         this.originalName.setText(movie.getName());
         this.image.setImageResource(movie.getImgId());
+
+        RecyclerView recyclerView = findViewById(R.id.comment_list);
+        recyclerView.setAdapter(new CommentAdapter());
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         findViewById(R.id.backBtn).setOnClickListener(new View.OnClickListener() {
             @Override

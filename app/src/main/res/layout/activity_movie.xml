@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".MovieActivity">
+    tools:context=".movie.MovieActivity">
 
     <fr.polytech.lechat.moviereview.NavView
         android:id="@+id/nav"
@@ -189,6 +189,13 @@
                     android:textColor="@color/white" />
 
             </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/comment_list"
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+            </android.support.v7.widget.RecyclerView>
 
         </LinearLayout>
     </ScrollView>

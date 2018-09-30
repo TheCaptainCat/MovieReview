@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import fr.polytech.lechat.moviereview.MovieActivity;
+import fr.polytech.lechat.moviereview.movie.MovieActivity;
 
 public class CommentListener implements View.OnClickListener {
     private EditText commentText;

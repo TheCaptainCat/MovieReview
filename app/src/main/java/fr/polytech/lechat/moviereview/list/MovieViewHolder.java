@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import fr.polytech.lechat.moviereview.MovieActivity;
+import fr.polytech.lechat.moviereview.movie.MovieActivity;
 import fr.polytech.lechat.moviereview.R;
 
 public class MovieViewHolder extends RecyclerView.ViewHolder {
